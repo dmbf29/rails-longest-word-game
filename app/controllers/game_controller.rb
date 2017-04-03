@@ -4,14 +4,14 @@ require 'json'
 class GameController < ApplicationController
   def game
     @grid =(('A'..'Z').to_a * 2).sample(9).join(" ")
-
+    @start_time = Time.now
   end
 
   def score
     @grid = params[:grid]
     @attempt = params[:attempt]
-    @end_time = params[:end_time]
-    @start_time = Time.now
+    @start_time = params[:start_time].to_time
+    @end_time = Time.now
     # @time_elapsed = @start_time.to_i - @end_time.to_i
     @result = run_game(@attempt, @grid, @start_time, @end_time)
   end
@@ -40,7 +40,7 @@ class GameController < ApplicationController
   end
 
   def time_elapsed(start_time, end_time)
-    end_time.to_i - start_time.to_i
+    end_time - start_time
   end
 
   def calc_score(attempt, grid, start_time, end_time)
