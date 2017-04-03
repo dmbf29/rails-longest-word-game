@@ -1,17 +1,15 @@
-<h1>Your Game Score:</h1>
+<div class="text-center padded">
+  <div class="container">
+    <div class="row">
+      <h1>Results:</h1>
 
-<h3>The Grid: <%= @grid %></h3>
-<p>Your word: <%= @attempt %></p>
-<p>Time Taken: <%= @result[:time] %></p>
-<p>Translation: <%= @result[:translation] %></p>
-<p>Your score: <%= @result[:score] %></p>
-<p>Message: <%= @result[:message] %></p>
-
-
-
-<p><%= @result %></p>
-<!-- <p><%= @end_time %></p>
-
-<p><%= @time_elapsed %></p>
- -->
-<%= link_to "Play Again", game_path %>
+      <h3>The Grid: <%= @grid %></h3>
+      <p><strong>Your word: </strong><%= @attempt %></p>
+      <p><strong>Time Taken: </strong><%= @result[:time] %></p>
+      <p><strong>French Translation: </strong><%= @result[:translation] %></p>
+      <p><strong>Your score: </strong><%= @result[:score] %></p>
+      <p><strong>Message: </strong><%= @result[:message] %></p>
+      <%= link_to "Play Again", game_path %>
+    </div>
+  </div>
+</div>

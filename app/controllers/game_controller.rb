@@ -3,7 +3,7 @@ require 'json'
 
 class GameController < ApplicationController
   def game
-    @grid =(('A'..'Z').to_a * 2).sample(9).join(" ")
+    @grid =(('A'..'Z').to_a * 2).sample(12).join(" ")
     @start_time = Time.now
   end
 
