@@ -1,0 +1,17 @@
+<h1>Your Game Score:</h1>
+
+<h3>The Grid: <%= @grid %></h3>
+<p>Your word: <%= @attempt %></p>
+<p>Time Taken: <%= @result[:time] %></p>
+<p>Translation: <%= @result[:translation] %></p>
+<p>Your score: <%= @result[:score] %></p>
+<p>Message: <%= @result[:message] %></p>
+
+
+
+<p><%= @result %></p>
+<!-- <p><%= @end_time %></p>
+
+<p><%= @time_elapsed %></p>
+ -->
+<%= link_to "Play Again", game_path %>
